@@ -1,0 +1,113 @@
+/* frontend/src/styles/tokens.css */
+
+@import "tailwindcss";
+
+/* Tailwind v4 custom design tokens */
+@theme {
+  --color-void: #05070d;
+  --color-panel: rgba(13, 20, 33, 0.65);
+  --color-cyanAccent: #00e5ff;
+  --color-blueAccent: #2979ff;
+  --color-greenAccent: #00e676;
+  --color-amberAccent: #ffb300;
+  --color-redAccent: #ff3d57;
+  --color-textPrimary: #e8f1ff;
+  --color-textMuted: #7d8aa3;
+  --color-glassPanel: rgba(13, 20, 33, 0.65);
+}
+
+:root {
+  --bg-void: #05070d;
+  --bg-panel: rgba(13, 20, 33, 0.65);
+  --border-glass: rgba(255, 255, 255, 0.08);
+  --accent-cyan: #00e5ff;
+  --accent-blue: #2979ff;
+  --accent-green: #00e676;
+  --accent-amber: #ffb300;
+  --accent-red: #ff3d57;
+  --text-primary: #e8f1ff;
+  --text-muted: #7d8aa3;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-void);
+  color: var(--text-primary);
+  font-family: 'Space Grotesk', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Glassmorphic Styles */
+.glass-panel {
+  background: var(--bg-panel);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-glass);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+}
+
+.glass-panel-glow {
+  background: var(--bg-panel);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-glass);
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.15), 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+}
+
+.text-glow-cyan {
+  text-shadow: 0 0 10px rgba(0, 229, 255, 0.6);
+}
+
+.text-glow-red {
+  text-shadow: 0 0 10px rgba(255, 61, 87, 0.6);
+}
+
+.text-glow-amber {
+  text-shadow: 0 0 10px rgba(255, 179, 0, 0.6);
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(5, 7, 13, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-cyan);
+}
+
+/* Keyframes for ambient mesh background */
+@keyframes mesh-drift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-mesh {
+  background: linear-gradient(-45deg, #020306, #050814, #080f24, #040812);
+  background-size: 400% 400%;
+  animation: mesh-drift 20s ease infinite;
+}
+
+/* Tabular numbers */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
